@@ -8,7 +8,6 @@ import Dock from './Dock'
 import WindowFrame from './WindowFrame'
 import SpotlightModal from './SpotlightModal'
 import PushNotification, { PushNotificationData } from './PushNotification'
-import AudioBeatPlayer from './AudioBeatPlayer'
 import MobileOSView from './MobileOSView'
 
 // Apps
@@ -40,7 +39,6 @@ export default function OSDesktop() {
 
   const [isDarkTheme, setIsDarkTheme] = useState(true)
   const [spotlightOpen, setSpotlightOpen] = useState(false)
-  const [audioOpen, setAudioOpen] = useState(false)
   const [notification, setNotification] = useState<PushNotificationData | null>(null)
   const [safariRepo, setSafariRepo] = useState<string>('knee-osteoarthritis-classifier')
   const [notesTargetId, setNotesTargetId] = useState<string | undefined>(undefined)
@@ -317,13 +315,8 @@ export default function OSDesktop() {
         onOpenSpotlight={() => setSpotlightOpen(true)}
         onToggleTheme={() => setIsDarkTheme(!isDarkTheme)}
         isDarkTheme={isDarkTheme}
-        onToggleAudio={() => setAudioOpen(!audioOpen)}
-        isAudioOpen={audioOpen}
         onExitToStandard={() => router.push('/')}
       />
-
-      {/* ── Audio Mini Player Modal ── */}
-      <AudioBeatPlayer isOpen={audioOpen} onClose={() => setAudioOpen(false)} />
 
       {/* ── Push Notification Banner ── */}
       <PushNotification notification={notification} onDismiss={() => setNotification(null)} />

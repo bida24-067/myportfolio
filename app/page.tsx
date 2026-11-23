@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { portfolioData, Project } from '@/src/data/portfolio'
 import ModeSwitchToast from '@/components/ModeSwitchToast'
+import AnimatedHeroBackground from '@/components/AnimatedHeroBackground'
 
 export default function HomePage() {
   const { personal, ventures, projects, skills } = portfolioData
@@ -82,19 +83,8 @@ export default function HomePage() {
         id="overview"
         className="relative pt-16 pb-24 md:pt-28 md:pb-36 overflow-hidden bg-[#121212] border-b border-white/[0.08]"
       >
-        {/* Background Image at 45% opacity with gradient fade (Blanc Visual DNA) */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <Image
-            src="/background.webp"
-            alt=""
-            fill
-            priority
-            quality={80}
-            sizes="100vw"
-            className="object-cover object-center opacity-45"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/40 via-transparent to-[#121212]" />
-        </div>
+        {/* Animated Background with subtle Ken Burns drift & silhouettes of birds flying right-to-left */}
+        <AnimatedHeroBackground />
 
         {/* Ambient background glow */}
         <div

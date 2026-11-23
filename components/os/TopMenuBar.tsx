@@ -8,8 +8,6 @@ export default function TopMenuBar({
   onOpenSpotlight,
   onToggleTheme,
   isDarkTheme,
-  onToggleAudio,
-  isAudioOpen,
   onExitToStandard,
 }: {
   activeAppTitle: string
@@ -17,8 +15,6 @@ export default function TopMenuBar({
   onOpenSpotlight: () => void
   onToggleTheme: () => void
   isDarkTheme: boolean
-  onToggleAudio: () => void
-  isAudioOpen: boolean
   onExitToStandard: () => void
 }) {
   const [appleMenuOpen, setAppleMenuOpen] = useState(false)
@@ -258,25 +254,8 @@ export default function TopMenuBar({
         </div>
       </div>
 
-      {/* Right side: Audio, Theme, Spotlight, Clock, Exit */}
+      {/* Right side: Theme, Spotlight, Clock, Exit */}
       <div className="flex items-center gap-3">
-        {/* Audio Beat Player Toggle */}
-        <button
-          type="button"
-          onClick={onToggleAudio}
-          className={`flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] transition-colors ${
-            isAudioOpen ? 'bg-[#9fa3fc]/25 text-[#9fa3fc]' : 'hover:bg-white/10 text-white/70 hover:text-white'
-          }`}
-          title="GarageBand Deep House / Amapiano Beat Loop"
-        >
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M9 18V5l12-2v13" />
-            <circle cx="6" cy="18" r="3" />
-            <circle cx="18" cy="16" r="3" />
-          </svg>
-          <span className="hidden sm:inline">Beat Loop</span>
-        </button>
-
         {/* Theme Toggle */}
         <button
           type="button"
