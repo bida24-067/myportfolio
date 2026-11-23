@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-background: var(--color-bg-page);
+  --color-foreground: var(--color-text-primary);
+  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), var(--font-body), system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Grain overlay ──────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+}
+
+/* ── Focus rings ───────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.text-h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.text-h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-card);
+  letter-spacing: var(--tracking-h3);
+}
+
+/* ── Gradient text (verified from micro1) ───────────────────── */
+.text-gradient {
+  background: var(--gradient-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Container ─────────────────────────────────────────────── */
+.container-bd {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+.section-pad { padding-block: var(--section-pad-y); }
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  border-radius: var(--radius-button);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  backdrop-filter: blur(5px);
+  transition: background-color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: var(--color-button-hover-bg);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-button);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-normal);
+  line-height: 1.2;
+  transition: color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-hover);
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.card-bd {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  transition: border-color var(--duration-normal) var(--ease-out),
+              background-color var(--duration-normal) var(--ease-out);
+}
+.card-bd:hover {
+  border-color: var(--color-border-hover);
+  background-color: var(--color-bg-card-hover);
+}

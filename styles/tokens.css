@@ -1,0 +1,73 @@
+/* ==========================================================
+   Blanc Data — Design Tokens
+   Source: micro1.ai computed styles via browser extraction
+   All tokens marked VERIFIED unless stated otherwise
+   ========================================================== */
+
+@layer base {
+  :root {
+    /* ── Colour (all verified) ───────────────────────────────── */
+    --color-bg-page:         #121212;
+    --color-bg-nav:          rgba(18,18,18,0.85);
+    --color-bg-section-alt:  #191919;
+    --color-bg-card:         #191919;
+    --color-bg-card-hover:   #1e1e1e;
+    --color-text-primary:    rgba(255,255,255,0.90);
+    --color-text-secondary:  rgba(255,255,255,0.60);
+    --color-border:          rgba(255,255,255,0.08);
+    --color-border-hover:    rgba(255,255,255,0.14);
+    --color-accent:          #9fa3fc;              /* brand link/accent */
+    --color-button-bg:       rgba(255,255,255,0.90);
+    --color-button-text:     #000000;
+    --color-button-hover-bg: rgba(255,255,255,0.70);
+
+    /* ── Gradients (verified) ───────────────────────────────── */
+    --gradient-hero-fade:   linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    --gradient-heading:     linear-gradient(180deg, #ffffff, #999999);
+    --gradient-brand-bg:    linear-gradient(135deg, rgba(109,124,255,0.20), rgba(99,144,240,0.20) 43%, rgba(101,65,220,0.20));
+    --gradient-cta-border:  linear-gradient(150deg, rgba(102,102,102,0.35), rgba(0,0,0,1) 50%), linear-gradient(150deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04) 100%, rgba(255,255,255,0));
+
+    /* ── Typography (verified) ──────────────────────────────── */
+    /* Outfit is on Google Fonts (SIL Open Font Licence) — safe to use */
+    --font-display: "Outfit", system-ui, sans-serif;
+    --font-body:    "Outfit", system-ui, sans-serif;
+
+    /* Type scale — clamp(mobile, fluid, desktop) based on verified sizes:
+       desktop: 64px h1 / 52px h2 / 24px h3 / 18px p / 14px small
+       mobile:  7.5vw≈29px h1 / 1.9rem≈30px h2 / 1.125rem h3 / 1rem p */
+    --text-h1:    clamp(1.875rem, 7.5vw, 4rem);
+    --text-h2:    clamp(1.9rem,   4vw,   3.25rem);
+    --text-h3:    clamp(1.125rem, 2vw,   1.5rem);
+    --text-body:  clamp(1rem,     1.1vw, 1.125rem);
+    --text-small: 0.875rem;
+    --text-label: 0.75rem;
+
+    --weight-normal:  400;
+    --weight-medium:  500;
+    --weight-semibold:600;
+
+    --leading-tight:  1.2;
+    --leading-normal: 1.6;
+    --leading-card:   1.4;
+    --tracking-tight: -0.02em;   /* verified — h1, h2 */
+    --tracking-h3:    0;         /* verified */
+
+    /* ── Layout (verified) ──────────────────────────────────── */
+    --container-max: 84rem;        /* 1344px — container-large */
+    --container-pad: clamp(1.25rem, 4vw, 2.5rem);
+    --section-pad-y: clamp(3rem, 7.5vw, 7.5rem);  /* 120px desktop */
+    --nav-height:    80px;         /* simplified from 135px outer; inner bar 48px */
+    --card-gap:      1.25rem;      /* verified — 20px grid gap */
+
+    /* ── Shape (verified) ───────────────────────────────────── */
+    --radius-card:   0px;          /* verified — sharp corners on benchmark cards */
+    --radius-card-lg: 1.25rem;     /* verified — CTA card wrapper (20px) */
+    --radius-button: 0.375rem;     /* verified — primary CTA button (6px) */
+    --radius-input:  0.4rem;       /* verified — form inputs (6.4px) */
+
+    /* ── Motion ─────────────────────────────────────────────── */
+    --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast:   150ms;
+    --duration-normal: 300ms;
+  }
+}
