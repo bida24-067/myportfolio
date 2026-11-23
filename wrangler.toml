@@ -5,6 +5,10 @@ compatibility_flags = ["nodejs_compat"]
 workers_dev = false
 preview_urls = false
 
+routes = [
+  { pattern = "loagomov.blancsociety.co.uk", custom_domain = true }
+]
+
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
@@ -12,3 +16,4 @@ binding = "ASSETS"
 [vars]
 CONTACT_EMAIL = "hello@blancsociety.co.uk"
 RESEND_FROM_EMAIL = "Blanc Society <confirmations@mail.blancsociety.co.uk>"
+PORTFOLIO_CONTACT_EMAIL = "hello@blancsociety.co.uk"
